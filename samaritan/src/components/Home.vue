@@ -2,14 +2,20 @@
   <div class="hello">
     <img :src="logo" class="logo" >
     <div class="brand">{{brand }}</div>
+
+    <Form />
   </div>
 </template>
 
 <script>
+import Form from './ContactForm.vue'
 export default {
   name: 'HelloWorld',
   props: {
     brand: String
+  },
+  components: {
+    Form: Form
   },
   data(){
     return{
