@@ -15,14 +15,18 @@
 
       <div class="description">
         <p>
-          SETTLE SMART<br/>
+          SETTLE SMART<br />
           We help international students find accommodation in Canada!<br />
           Our idea is to connect seekers like you with experts in the
-          accommodation domain (Mentors) to help you find a suitable accommodation even before
-          you land in Canada!
+          accommodation domain (Mentors) to help you find a suitable
+          accommodation even before you land in Canada!
         </p>
         <div class="search-bar">
-          <input type="text" placeholder="Destination City" class="search-box" />
+          <input
+            type="text"
+            placeholder="Destination City"
+            class="search-box"
+          />
           <button>Search</button>
         </div>
       </div>
@@ -44,13 +48,15 @@
         <img :src="logo" class="logo" />
         <span class="brand">{{ brand }}</span>
       </div>
+      <p class="copyright">&copy; 2024 SAMARITAN | All rights reserved.</p>
       <div class="social-media">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
+        <div class="social-media">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
       </div>
-      <br/>
-      <p class="copyright">&copy; 2024 SAMARITAN. All rights reserved.</p>
     </div>
   </div>
 </template>
@@ -198,5 +204,9 @@ li {
   text-align: center;
   margin: 0;
   flex: 1;
+}
+
+.fab {
+  padding: 10px;
 }
 </style>
