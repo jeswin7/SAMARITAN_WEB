@@ -5,21 +5,28 @@
       <div class="logo-brand-container">
         <img :src="logo" class="logo" />
         <span class="brand">{{ brand }}</span>
+        <div class="nav">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+          </ul>
+        </div>
       </div>
-      <div class="nav">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-        </ul>
-      </div>
+
       <div class="description">
-        <h1>SETTLE SMART</h1>
-        <p>{{description}}</p>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Cities" />
+        <p>
+          SETTLE SMART<br/>
+          We help international students find accommodation in Canada!<br />
+          Our idea is to connect seekers like you with experts in the
+          accommodation domain (Mentors) to help you find a suitable accommodation even before
+          you land in Canada!
+        </p>
+        <div class="search-bar">
+          <input type="text" placeholder="Destination City" class="search-box" />
         <button>Search</button>
       </div>
+      </div>
+
     </div>
 
     <!-- Contact Page -->
@@ -28,18 +35,23 @@
         <Form />
       </div>
     </div>
-          <div class="metrics">
-        <p>SAMARITAN | Metrics</p>
+    <div class="metrics">
+      <p>SAMARITAN | Metrics</p>
+    </div>
+    <div class="line"></div>
+
+    <div class="footer">
+      <div class="logo-brand-container">
+        <img :src="logo" class="logo" />
+        <span class="brand">{{ brand }}</span>
       </div>
-      <div class="footer">
-        <img :src="logo" class="logo" /> {{brand}}
-        <div class="social-media">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
-        </div>
-        <p>&copy; 2024 SAMARITAN. All rights reserved.</p>
+      <div class="social-media">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
       </div>
+      <p>&copy; 2024 SAMARITAN. All rights reserved.</p>
+    </div>
   </div>
 </template>
 
@@ -57,7 +69,6 @@ export default {
   data() {
     return {
       logo: require("../assets/samaritanLogo.png"),
-      description:"We help international students find accommodation in Canada! Our idea is to connect seekers like you with experts in the accommodation domain(Mentors) to help you find a suitable accommodation even before you land in Canada!"
     };
   },
 };
@@ -84,6 +95,23 @@ export default {
   font-size: 24px;
 }
 
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+  color: white;
+}
+
+.nav {
+  margin-right: 20px;
+  justify-content: flex-end;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -95,28 +123,28 @@ li {
   margin: 0 10px;
 }
 
-.nav {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .description {
-  margin: 20px;
+  margin-top: 10%;
+  padding: 10px;
+  color: white;
+  width: 50rem;
+  text-align: left;
+  font-size: 25px;
 }
 
-.search-bar {
-  margin: 20px;
+.search-box {
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .landing-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  background-image: url('../assets/homeBG.jpg');
+  background-image: url("../assets/homeBG.png");
   background-size: cover;
   background-position: center;
+  background-color: black;
 }
 
 .contact-page {
@@ -125,7 +153,7 @@ li {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url('../assets/contactFormBG.jpg');
+  background-image: url("../assets/contactFormBG.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -145,7 +173,6 @@ li {
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 20px;
   background-color: black;
   color: white;
@@ -154,5 +181,11 @@ li {
 
 .social-media a {
   margin-right: 10px;
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: white;
 }
 </style>
