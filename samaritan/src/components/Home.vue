@@ -8,7 +8,7 @@
         <div class="nav">
           <ul>
             <li>Home</li>
-            <li>About Us</li>
+            <li>About</li>
           </ul>
         </div>
       </div>
@@ -23,10 +23,9 @@
         </p>
         <div class="search-bar">
           <input type="text" placeholder="Destination City" class="search-box" />
-        <button>Search</button>
+          <button>Search</button>
+        </div>
       </div>
-      </div>
-
     </div>
 
     <!-- Contact Page -->
@@ -50,7 +49,8 @@
         <a href="#">Twitter</a>
         <a href="#">Instagram</a>
       </div>
-      <p>&copy; 2024 SAMARITAN. All rights reserved.</p>
+      <br/>
+      <p class="copyright">&copy; 2024 SAMARITAN. All rights reserved.</p>
     </div>
   </div>
 </template>
@@ -173,10 +173,15 @@ li {
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background-color: black;
   color: white;
   width: 100%;
+}
+
+.social-media {
+  margin-right: 20px;
 }
 
 .social-media a {
@@ -187,5 +192,11 @@ li {
   height: 2px;
   width: 100%;
   background-color: white;
+}
+
+.footer .copyright {
+  text-align: center;
+  margin: 0;
+  flex: 1;
 }
 </style>

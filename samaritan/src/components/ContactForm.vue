@@ -1,5 +1,9 @@
 <template>
     <Form class="formContainer" @submit.prevent="submitForm">
+        <div class="formHeading">Reach Out & Kickstart Your Canadian Journey Today!</div>
+        <br/>
+        <div class="formSubHeading">We will get back to you within 24-48 hours timeframe</div>
+        <br/>
         <input type="text" placeholder="fname" class="textBox" v-model="formData.fname" />
         <input type="text" placeholder="lname" class="textBox" v-model="formData.lname"/>
         <br />
@@ -50,5 +54,12 @@
 }
 .btn{
     padding: 20px;
+}
+.formHeading{
+    color: #319f9f;
+    font-size: 25px;
+}
+.formSubHeading{
+    color: white;
 }
 </style>
