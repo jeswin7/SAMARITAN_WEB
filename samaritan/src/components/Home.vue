@@ -1,46 +1,81 @@
 <template>
-  <div class="hello">
-    <img :src="logo" class="logo" >
-    <div class="brand">{{brand }}</div>
+  <div id="app">
+    <!-- Landing Page -->
+    <div class="landing-page">
+      <img :src="logo" class="logo" />{{ brand }}
+      <div class="nav">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>SETTLE SMART</h1>
+        <p>
+          We help international students find accommodation in Canada! Our idea
+          is to connect seekers like you with experts in the accommodation
+          domain(Mentors) to help you find a suitable accommodation even before
+          you land in Canada!
+        </p>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Cities" />
+        <button>Search</button>
+      </div>
+    </div>
 
-    <Form />
+    <!-- Contact Page -->
+    <div class="contact-page">
+      <Form />
+    </div>
+      <div class="metrics">
+        <p>SAMARITAN | Metrics</p>
+      </div>
+      <div class="footer">
+      <img :src="logo" class="logo" />{{ brand }}
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2024 SAMARITAN. All rights reserved.</p>
+      </div>
   </div>
 </template>
 
+
 <script>
-import Form from './ContactForm.vue'
+import Form from "./ContactForm.vue";
+
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    brand: String
+    brand: String,
   },
   components: {
-    Form: Form
+    Form: Form,
   },
-  data(){
-    return{
-      logo: require("../assets/samaritanLogo.png")
-    }
-  }
-}
+  data() {
+    return {
+      logo: require("../assets/samaritanLogo.png"),
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello{
+.hello {
   display: flex;
-  align-items: center;
 }
-.logo{
-  width: 100px
+.logo {
+  width: 100px;
 }
-.brand{
-  color: #319F9F;
+.brand {
+  color: #319f9f;
   font-size: 40px;
 }
-h3 {
-  margin: 40px 0 0;
-}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -51,5 +86,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.landing-page {
+  text-align: left;
 }
 </style>
