@@ -21,13 +21,7 @@
           accommodation domain (Mentors) to help you find a suitable
           accommodation even before you land in Canada!
         </p>
-        <div class="search-bar">
-          <input
-            type="text"
-            placeholder="Destination City"
-            class="searchBox"
-          />
-        </div>
+        <SearchBox />
       </div>
     </div>
 
@@ -62,7 +56,8 @@
 
 <script>
 import Form from "./ContactForm.vue";
-import MetricsView from './MetricsView.vue'; // Renamed import
+import MetricsView from './MetricsView.vue';
+import SearchBox from './SearchCities.vue';
 
 export default {
   name: "HelloWorld",
@@ -71,7 +66,8 @@ export default {
   },
   components: {
     Form,
-    MetricsView, // Updated component name
+    MetricsView,
+    SearchBox
   },
   data() {
     return {
@@ -137,12 +133,6 @@ li {
   width: 50rem;
   text-align: left;
   font-size: 25px;
-}
-
-.searchBox {
-  width: 85%;
-  padding: 10px;
-  border-radius: 20px;
 }
 
 .landing-page {
