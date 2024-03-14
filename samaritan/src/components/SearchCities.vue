@@ -23,9 +23,13 @@
     <!-- Metrics content -->
     <div class="metricsContainer">
       <div v-for="(value, key) in results" :key="key" class="metricsGrid">
-        <p>
+        <p v-if="key === 'rentLowerLimit'">
+          <span class="themeMetricText">${{ value }} </span><br />
+          Onwards
+        </p>
+        <p v-else>
           <span class="themeMetricText">{{ value }}+ </span><br />
-          {{ pascalToNormal(key) }}
+          {{pascalToNormal(key)}}
         </p>
       </div>
     </div>
@@ -76,21 +80,31 @@ export default {
 </script>
 
 <style scoped>
+input {
+  background-color: #202020; 
+  /* background-color: white; */
+  color: white; 
+  outline: none;
+  opacity: 80%;
+}
 .searchBox {
   width: 80%;
   padding: 10px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border: 0;
+  font-size: 20px;
 }
 
 .searchBtn {
   padding: 10px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: white;
+  background-color: #202020;
   color: #319f9f;
   border: 0;
+  font-size: 20px;
+
 }
 
 .themeMetricText {
@@ -102,13 +116,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   font-size: 25px;
-  background-color: black;
-  opacity: 80%;
+  background-color: #202020;
+  opacity: 90%;
   justify-content: flex-start;
   margin-top: 20px;
   border-radius: 20px;
   position: relative; /* Needed for absolute positioning of close button */
-  width: 80%
+  width: 85%
 }
 
 .metricsGrid {

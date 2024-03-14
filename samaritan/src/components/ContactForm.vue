@@ -14,6 +14,7 @@
       class="rowTextBox samTheme"
       v-model="formData.fname"
     />
+    &nbsp;
     <input
       type="text"
       placeholder="Last Name"
@@ -28,12 +29,11 @@
       v-model="formData.email"
     />
     <br />
-    <input
-      type="text"
-      placeholder="Country"
-      class="textBox samTheme"
-      v-model="formData.country"
-    />
+    <select id="countrySelect" v-model="formData.country" class="textBox samTheme">
+      <option v-for="country in countries" :key="country.alpha3Code" :value="country.name.common">
+        {{ country.name.common }}
+      </option>
+    </select>
     <br />
     <input
       type="text"
@@ -47,7 +47,7 @@
       class="textBox samTheme"
       multiple
       v-model="formData.question"
-    />
+    ></textarea>
     <br />
     <input type="checkbox" id="remote" name="remote" v-model="formData.remote" class="chkBox"/>
     <label for="remote" class="chkBox">
@@ -59,24 +59,40 @@
 </template> 
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
+      countries: [],
       formData: {
         fname: "",
         lname: "",
         email: "",
-        country: "",
+        country: "", // Updated property name
         city: "",
         question: "",
         remote: false
       },
     };
   },
+  mounted() {
+    this.fetchCountries()
+  },
   methods: {
     submitForm() {
       console.log(this.formData);
     },
+    async fetchCountries(){
+      try{
+        const results = await axios.get('https://restcountries.com/v3.1/all')
+        console.log('fetched results:', results)
+        this.countries = results.data; // Access the data property
+      }
+      catch{
+        console.log('error!!!')
+      }
+    }
   },
 };
 </script>
@@ -91,14 +107,34 @@ export default {
   padding: 20px;
   opacity: 80%;
 }
+input, textarea {
+  background-color: #202020; 
+  /* background-color: white; */
+  color: white; 
+  font-size: 16px; 
+  outline: none;
+}
 .textBox {
   width: 85%;
   margin-bottom: 40px;
+  border: 0;
+  border: none; 
+}
+
+select {
+  width: 85%;
+  margin-bottom: 40px;
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  background-color: black;
+  color: white
 }
 
 .rowTextBox {
   width: 40%;
   margin-bottom: 40px;
+  border: 0;
 }
 
 .formHeading {
@@ -113,6 +149,7 @@ export default {
   background-color: #319f9f;
   width: 85%;
   color: white;
+  border: 0;
 }
 .chkBox {
   color: white;
