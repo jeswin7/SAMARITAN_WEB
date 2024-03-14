@@ -25,9 +25,8 @@
           <input
             type="text"
             placeholder="Destination City"
-            class="search-box"
+            class="searchBox"
           />
-          <button>Search</button>
         </div>
       </div>
     </div>
@@ -39,7 +38,7 @@
       </div>
     </div>
     <div class="metrics">
-      <p>SAMARITAN | Metrics</p>
+      <MetricsView /> <!-- Renamed component -->
     </div>
     <div class="line"></div>
 
@@ -63,6 +62,7 @@
 
 <script>
 import Form from "./ContactForm.vue";
+import MetricsView from './MetricsView.vue'; // Renamed import
 
 export default {
   name: "HelloWorld",
@@ -70,7 +70,8 @@ export default {
     brand: String,
   },
   components: {
-    Form: Form,
+    Form,
+    MetricsView, // Updated component name
   },
   data() {
     return {
@@ -138,7 +139,8 @@ li {
   font-size: 25px;
 }
 
-.search-box {
+.searchBox {
+  width: 85%;
   padding: 10px;
   border-radius: 20px;
 }
@@ -169,6 +171,10 @@ li {
 }
 
 .metrics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: black;
   color: white;
   text-align: center;
