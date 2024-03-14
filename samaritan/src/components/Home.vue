@@ -7,7 +7,7 @@
         <span class="brand">{{ brand }}</span>
         <div class="nav">
           <ul>
-            <li>Home</li>
+            <li class="active">Home</li>
             <li>About</li>
           </ul>
         </div>
@@ -15,7 +15,7 @@
 
       <div class="description">
         <p>
-          SETTLE SMART<br />
+          <span class="subHeading">SETTLE SMART</span><br />
           We help international students find accommodation in Canada!<br />
           Our idea is to connect seekers like you with experts in the
           accommodation domain (Mentors) to help you find a suitable
@@ -98,13 +98,18 @@ export default {
   font-size: 24px;
 }
 
+.subHeading {
+  color: #319f9f;
+  font-weight: bold;
+}
+
 .nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.nav ul li {
+.nav ul {
   display: inline-block;
   margin-left: 20px;
   color: white;
@@ -113,6 +118,11 @@ export default {
 .nav {
   margin-right: 20px;
   justify-content: flex-end;
+}
+
+.active {
+  font-weight: bold;
+  border-bottom-color: #319f9f;
 }
 
 ul {
