@@ -23,9 +23,13 @@
     <!-- Metrics content -->
     <div class="metricsContainer">
       <div v-for="(value, key) in results" :key="key" class="metricsGrid">
-        <p>
+        <p v-if="key === 'rentLowerLimit'">
+          <span class="themeMetricText">${{ value }} </span><br />
+          Onwards
+        </p>
+        <p v-else>
           <span class="themeMetricText">{{ value }}+ </span><br />
-          {{ pascalToNormal(key) }}
+          {{pascalToNormal(key)}}
         </p>
       </div>
     </div>
